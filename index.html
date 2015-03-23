@@ -2,27 +2,72 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>背景がフルスクリーンのクロスフェードスライダー（レスポンシブ対応）</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/flexslider.css">
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.flexslider-min.js"></script>
+	<link rel="stylesheet" href="css/slider-pro.css">
+	<script src="js/jquery.sliderPro.js"></script>
 	<script>
+		var w = $(window).width();
+		var h = $(window).height();
 		$(document).ready(function(){
-		  $('.bxslider').bxSlider();
+			$('#fullScreenSlider').sliderPro({
+				fade: true,
+				fadeDuration: 500,
+				slideDistance: 0,
+				forceSize: 'fullWidth',
+				buttons: false
+			});
+		});
+		$(function(){
+			if ( w >= 768 ) {
+			$('.sp-mask').css('height',h);
+			$('.indexContents').css({
+				width: w,
+				height: h
+			});
+			$(window).resize(function(){
+				var w = $(window).width();
+				var h = $(window).height();
+				$('.sp-mask').css('height',h);
+				$('.indexContents').css({
+					width: w,
+					height: h
+				});
+			});
+			}
 		});
 	</script>
 </head>
 <body>
-<div class="fullScreenSlider">
-	<ul class="bxslider">
-		<li><img src="images/danbo1.jpg" alt="ダンボー1"></li>
-		<li><img src="images/danbo2.jpg" alt="ダンボー2"></li>
-		<li><img src="images/danbo3.jpg" alt="ダンボー3"></li>
+<header>
+	<div class="headerInner">
+		<a href="" class="logo"><img src="images/logo.png" alt="ロゴ"></a>
+		<div class="headerNav">
+			<div class="headerNavBtn"><span class="lsf">list</span></div>
+			<nav>
+				<ul>
+					<li class="headerNav01"><a href="">メニュー</a></li>
+					<li class="headerNav02"><a href="">メニュー</a></li>
+					<li class="headerNav03"><a href="">メニュー</a></li>
+					<li class="headerNav04"><a href="">メニュー</a></li>
+					<li class="headerNav05"><a href="">メニュー</a></li>
+				</ul>
+			</nav>
+			<div class="headerContactBtn"><a href=""><img src="images/header-contact-btn.png" alt="お問い合わせ"></a></div>
+		</div>
+		<!-- End headerNav -->
+		</div>
+	<!-- End headerInner -->
+</header>
+<div id="fullScreenSlider">
+	<ul class="slider sp-slides">
+		<li class="slide-img01 sp-slide"><img src="images/danbo1.jpg" alt="ダンボー1"></li>
+		<li class="slide-img02 sp-slide"><img src="images/danbo2.jpg" alt="ダンボー2"></li>
+		<li class="slide-img03 sp-slide"><img src="images/danbo3.jpg" alt="ダンボー3"></li>
 	</ul>
 </div>
-<header>
-
-</header>
+<div class="indexContents"></div>
 </body>
 </html>

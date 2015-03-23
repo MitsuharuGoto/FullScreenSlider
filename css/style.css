@@ -4,3 +4,156 @@
 	margin: 0;
 	padding: 0;
 }
+
+ul, ol {
+	list-style-type: none;
+}
+
+/* LigatureSymbols */
+@font-face {
+    font-family: 'LigatureSymbols';
+    src: url('../font/LigatureSymbols-2.11.eot');
+    src: url('../font/LigatureSymbols-2.11.eot?#iefix') format('embedded-opentype'),
+         url('../font/LigatureSymbols-2.11.woff') format('woff'),
+         url('../font/LigatureSymbols-2.11.ttf') format('truetype'),
+         url('../font/LigatureSymbols-2.11.svg#LigatureSymbols') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lsf, .lsf-icon:before {
+  font-family: 'LigatureSymbols';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga" 1, "dlig" 1;
+  font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+@media screen and (max-width: 767px) {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	header {
+		position: relative;
+		z-index: 10000;
+	}
+	.headerInner {
+		padding: 10px 10px 0;
+	}
+	.headerInner:after {
+		clear: both;
+		display: block;
+		content: "";
+	}
+	.logo {
+		display: block;
+		float: left;
+		width: 50px;
+		height: auto;
+	}
+	.headerNav {
+		float: right;
+		width: 70%;
+	}
+	.headerNav nav {
+		position: absolute;
+		top: 91px;
+		left: 0;
+		width: 100%;
+	}
+
+	.headerNav nav ul {
+		display: none;
+		border-bottom: 1px solid #333;
+	}
+	.headerNav nav a {
+		display: block;
+		padding: 0.5rem 1rem;
+		border-top: 1px solid #333;
+		border-left: 1px solid #333;
+		border-right: 1px solid #333;
+		background: #fff;
+		text-decoration: none;
+	}
+	.headerNavBtn {
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+		line-height: 27px;
+		border: 1px solid #333;
+		background: #fff;
+		font-size: 32px;
+		text-align: center;
+	}
+	.headerContactBtn a {
+		display: block;
+		float: right;
+		width: 132px;
+		margin: 10px 42px 0 0;
+	}
+	#fullScreenSlider {
+		position: relative;
+		z-index: 9;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10000;
+		width: 200px;
+		min-height: 100%;
+		background: rgba(255,255,255, 0.8);
+	}
+	.headerNavBtn {
+		display: none;
+	}
+	.headerContactBtn {
+		width: 100px;
+	}
+	.headerContactBtn img {
+		max-width: 100%;
+	}
+	.indexContents {
+		position: relative;
+		z-index: 9999;
+	}
+	#fullScreenSlider {
+		position: fixed;
+		top: 0;
+		z-index: 0;
+	}
+	.slider img {
+		display: none;
+	}
+	.sp-slides,
+	.sp-slide {
+		min-width: 100% !important;
+		min-height: 100% !important;
+	}
+
+	.slide-img01 {
+		background: url(../images/danbo1.jpg) no-repeat left bottom;
+		background-size: cover;
+	}
+	.slide-img02 {
+		background: url(../images/danbo2.jpg) no-repeat left bottom;
+		background-size: cover;
+	}
+	.slide-img03 {
+		background: url(../images/danbo3.jpg) no-repeat left bottom;
+		background-size: cover;
+	}
+}
